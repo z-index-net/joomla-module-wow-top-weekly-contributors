@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- @Version $Id: $ -->
+<!-- @Version $Id$ -->
 <extension type="module" version="2.5" client="site" method="upgrade">
     <name>WoW Top Weekly Contributors</name>
     <author>Branko Wilhelm</author>

@@ -8,7 +8,7 @@
  * @copyright  (c) 2013 Branko Wilhelm
  * @package    mod_wow_top_weekly_contributors
  * @license    GNU General Public License v3
- * @version    $Id: $
+ * @version    $Id$
  */
 
 defined('_JEXEC') or die;
