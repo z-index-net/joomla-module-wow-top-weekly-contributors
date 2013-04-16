@@ -13,7 +13,7 @@
 
 defined('_JEXEC') or die;
 
-JFactory::getDocument()->addStyleSheet(JURI::base(true) . '/modules/' . $module->module . '/tmpl/stylesheet.css');
+JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module->module . '/tmpl/stylesheet.css');
 ?>
 <div class="mod_wow_top_weekly_contributors">
     <?php foreach ($contributors as $contributor): ?>
