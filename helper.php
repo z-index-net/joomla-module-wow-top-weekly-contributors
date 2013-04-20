@@ -47,27 +47,31 @@ abstract class mod_wow_top_weekly_contributors {
         }
         
         if(strpos($result->body, '<div id="roster" class="table">') === false) {
-        	return 'no $contributors found';
+        	return 'no contributors found';
         }
-
+        
         // get only roster data
         preg_match('#<div id="roster" class="table">(.+?)</div>#is', $result->body, $result->body);
         
         $result->body = $result->body[1];
-        //domix($result->body,1);
         
-        return 'null';
+        $result->dom = new DOMDocument;
+        $result->dom->loadHTML('<?xml encoding="UTF-8">' . $result->body);
+        $result->table = $result->dom->getElementsByTagName('tbody')->item(0)->getElementsByTagName('tr');
+        $result->rows = array();
         
-        // find all contributors
-        preg_match_all('#<a.*href="achievement\#([0-9:]+):a(\d+)".*>.*background-image: url\("(.*)"\);.*<strong class="title">(.*)</strong>#Uis', $result->body, $matches, PREG_SET_ORDER);
+        for($c = 0; $c < $result->table->length; $c++){
+        	$result->rows[] = $result->table->item($c)->getElementsByTagName('td');
+        }
         
-        foreach($matches as $key => $match) {
+        $contributors = array();
+        foreach($result->rows as $key => $row) {
         	$contributors[$key] = new stdClass;
-        	$contributors[$key]->name = $match[4];
-        	$contributors[$key]->image = $match[3];
-        	$contributors[$key]->id = $match[2];
-        	$contributors[$key]->link = $url . '#' . $match[1] . ':' . $match[2];
-        	$contributors[$key]->link = self::link($achievements[$key], $params);
+        	$contributors[$key]->name = trim($row->item(1)->textContent);
+        	$contributors[$key]->class = $row->item(2)->getElementsByTagName('img')->item(0)->getAttribute('src');
+        	$contributors[$key]->level = trim($row->item(3)->textContent);
+        	$contributors[$key]->points = trim($row->item(4)->textContent);
+        	$contributors[$key]->link = self::link($contributors[$key]->name, $params);
         }
         
         return $contributors;

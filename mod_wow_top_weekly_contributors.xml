@@ -48,6 +48,24 @@
                     <option value="wowhead.com">wowhead.com</option>
                 </field>
             </fieldset>
+            <fieldset name="DISPLAY">
+                <field name="display_thead" type="radio" default="1" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_THEAD_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_THEAD_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="display_place" type="radio" default="1" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_PLACE_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_PLACE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field name="display_level" type="radio" default="1" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_LEVEL_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_LEVEL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field name="display_class" type="radio" default="1" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_CLASS_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_CLASS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
                 <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
