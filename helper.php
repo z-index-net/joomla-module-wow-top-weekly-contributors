@@ -7,7 +7,7 @@
  * @link       http://www.z-index.net
  * @copyright  (c) 2013 Branko Wilhelm
  * @package    mod_wow_top_weekly_contributors
- * @license    GNU General Public License v3
+ * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * @version    $Id$
  */
 
@@ -16,11 +16,6 @@ defined('_JEXEC') or die;
 abstract class mod_wow_top_weekly_contributors {
 	
     public static function _(JRegistry &$params) {
-
-        if(!$params->get('lang') || !$params->get('realm') || !$params->get('guild')) {
-            return 'please configure Module - ' . __CLASS__;
-        }
-
         $url = 'http://' . $params->get('region') . '.battle.net/wow/' . $params->get('lang') . '/guild/' . $params->get('realm') . '/' . $params->get('guild') . '/';
         
         $cache = JFactory::getCache(__CLASS__, 'output');
@@ -64,7 +59,6 @@ abstract class mod_wow_top_weekly_contributors {
         	$result->rows[] = $result->table->item($c)->getElementsByTagName('td');
         }
         
-        $contributors = array();
         foreach($result->rows as $key => $row) {
         	$contributors[$key] = new stdClass;
         	$contributors[$key]->name = trim($row->item(1)->textContent);

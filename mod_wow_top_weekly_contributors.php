@@ -7,7 +7,7 @@
  * @link       http://www.z-index.net
  * @copyright  (c) 2013 Branko Wilhelm
  * @package    mod_wow_top_weekly_contributors
- * @license    GNU General Public License v3
+ * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * @version    $Id$
  */
 

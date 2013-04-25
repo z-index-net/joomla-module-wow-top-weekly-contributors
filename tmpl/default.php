@@ -7,7 +7,7 @@
  * @link       http://www.z-index.net
  * @copyright  (c) 2013 Branko Wilhelm
  * @package    mod_wow_top_weekly_contributors
- * @license    GNU General Public License v3
+ * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * @version    $Id$
  */
 
@@ -39,7 +39,7 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
    		<?php if($params->get('display_place')) { ?>
         <td class="place"><?php echo ++$key; ?></td>
         <?php } ?>
-        <td class="name"><?php echo JHtml::_('link', $contributor->link, $contributor->name); ?></td>
+        <td class="name"><?php echo JHtml::_('link', $contributor->link, $contributor->name, array('target' => '_blank')); ?></td>
  		<?php if($params->get('display_class')) { ?>
         <td class="class"><?php echo JHtml::_('image', $contributor->class, $contributor->name); ?></td>
         <?php } ?>
