@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- @Version $Id$ -->
 <extension type="module" version="2.5" client="site" method="upgrade">
     <name>WoW Top Weekly Contributors</name>
     <author>Branko Wilhelm</author>
@@ -8,7 +7,7 @@
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
     <authorEmail>bw@z-index.net</authorEmail>
     <authorUrl>www.z-index.net</authorUrl>
-    <version>@SVN_REVISION@</version>
+    <version>@REVISION@</version>
     <description>Display Top Weekly Contributors.</description>
     <files>
         <filename module="mod_wow_top_weekly_contributors">mod_wow_top_weekly_contributors.php</filename>
