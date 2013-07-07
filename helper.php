@@ -41,7 +41,6 @@ abstract class mod_wow_top_weekly_contributors {
         	return 'no contributors found';
         }
         
-        // get only roster data
         preg_match('#<div id="roster" class="table">(.+?)</div>#is', $result->body, $result->body);
         
         $result->body = $result->body[1];
