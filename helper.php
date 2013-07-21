@@ -14,7 +14,7 @@ abstract class mod_wow_top_weekly_contributors {
     public static function _(JRegistry &$params) {
         $url = 'http://' . $params->get('region') . '.battle.net/wow/' . $params->get('lang') . '/guild/' . $params->get('realm') . '/' . $params->get('guild') . '/';
         
-        $cache = JFactory::getCache(__CLASS__, 'output');
+        $cache = JFactory::getCache('wow', 'output');
         $cache->setCaching(1);
         $cache->setLifeTime($params->get('cache_time', 60));
          
