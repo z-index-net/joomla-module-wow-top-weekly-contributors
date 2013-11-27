@@ -1,15 +1,15 @@
 table.mod_wow_top_weekly_contributors {
-	width: 100%;
+    width: 100%;
 }
 
 table.mod_wow_top_weekly_contributors td,
 table.mod_wow_top_weekly_contributors th {
-	padding: 2px;
+    padding: 2px;
 }
 
 table.mod_wow_top_weekly_contributors .place,
 table.mod_wow_top_weekly_contributors .level,
 table.mod_wow_top_weekly_contributors .class,
 table.mod_wow_top_weekly_contributors .points {
-	text-align: center;
+    text-align: center;
 }

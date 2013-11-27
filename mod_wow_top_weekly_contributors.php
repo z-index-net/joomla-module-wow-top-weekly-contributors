@@ -19,9 +19,9 @@ $params->set('link', $params->get('link', 'battle.net'));
 
 $contributors = mod_wow_top_weekly_contributors::_($params);
 
-if(!is_array($contributors)) {
-	echo $contributors;
-	return;
+if (!is_array($contributors)) {
+    echo $contributors;
+    return;
 }
 
 require JModuleHelper::getLayoutPath($module->module, $params->get('layout', 'default'));
