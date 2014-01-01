@@ -1,0 +1,15 @@
+.mod_wow_top_weekly_contributors {
+    width: 100%;
+}
+
+.mod_wow_top_weekly_contributors td,
+.mod_wow_top_weekly_contributors th {
+    padding: 2px;
+}
+
+.mod_wow_top_weekly_contributors .place,
+.mod_wow_top_weekly_contributors .level,
+.mod_wow_top_weekly_contributors .class,
+.mod_wow_top_weekly_contributors .points {
+    text-align: center;
+}

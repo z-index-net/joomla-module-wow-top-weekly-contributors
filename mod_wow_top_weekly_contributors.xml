@@ -3,7 +3,7 @@
     <name>MOD_WOW_TOP_WEEKLY_CONTRIBUTORS</name>
     <author>Branko Wilhelm</author>
     <creationDate>Apr 2013</creationDate>
-    <copyright>(C) 2013 Branko Wilhelm</copyright>
+    <copyright>(C) 2013 - 2014 Branko Wilhelm</copyright>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
     <authorEmail>branko.wilhelm@gmail.com</authorEmail>
     <authorUrl>www.z-index.net</authorUrl>
@@ -12,8 +12,10 @@
     <files>
         <filename module="mod_wow_top_weekly_contributors">mod_wow_top_weekly_contributors.php</filename>
         <filename>helper.php</filename>
+        <folder>fields</folder>
         <folder>tmpl</folder>
     </files>
+    <scriptfile>script.installer.php</scriptfile>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_wow_top_weekly_contributors.ini</language>
         <language tag="en-GB">en-GB/en-GB.mod_wow_top_weekly_contributors.sys.ini</language>
@@ -24,7 +26,7 @@
         <server type="collection" priority="1" name="z-index development">http://www.z-index.net/en/extensions.xml</server>
     </updateservers>
     <config>
-        <fields name="params">
+        <fields name="params" addfieldpath="/modules/mod_wow_top_weekly_contributors/fields/">
             <fieldset name="basic">
                 <field name="guild" type="text" default="" size="30" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_GUILD_LABEL" />
                 <field name="realm" type="text" default="" size="30" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_REALM_LABEL" />
@@ -50,6 +52,9 @@
                     <option value="battle.net">battle.net</option>
                     <option value="wowhead.com">wowhead.com</option>
                 </field>
+                <field name="cache_time" type="text" filter="integer" default="60" size="5" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_CACHE_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_CACHE_DESC" />
+                <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_TIMEOUT_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_TIMEOUT_DESC" />
+                <field name="ajax" type="ajax" class="btn-group" label="Ajax" default="0" />
             </fieldset>
             <fieldset name="DISPLAY">
                 <field name="display_thead" type="radio" default="1" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_THEAD_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_DISPLAY_THEAD_DESC">
@@ -68,8 +73,6 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
-                <field name="cache_time" type="text" filter="integer" default="60" size="5" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_CACHE_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_CACHE_DESC" />
-                <field name="timeout" type="text" filter="integer" default="10" size="5" required="true" label="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_TIMEOUT_LABEL" description="MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_TIMEOUT_DESC" />
             </fieldset>
             <fieldset name="advanced">
                 <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
