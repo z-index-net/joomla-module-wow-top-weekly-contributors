@@ -70,12 +70,12 @@ abstract class ModWowTopWeeklyContributorsHelper
             return __CLASS__ . ' HTTP-Status ' . JHtml::_('link', 'http://wikipedia.org/wiki/List_of_HTTP_status_codes#' . $result->code, $result->code, array('target' => '_blank'));
         }
 
-        if (strpos($result->body, '<div id="roster" class="table">') === false) {
+        if (strpos($result->body, '<div class="summary-weekly-contributors">') === false) {
             return 'no contributors found';
         }
 
         // get only roster data
-        preg_match('#<div id="roster" class="table">(.+?)</div>#is', $result->body, $result->body);
+        preg_match('#<div class="summary-weekly-contributors">(.+?)</div>#is', $result->body, $result->body);
 
         $result->body = $result->body[1];
 
