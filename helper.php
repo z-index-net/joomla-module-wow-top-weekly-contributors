@@ -3,7 +3,7 @@
 /**
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2013 Branko Wilhelm
+ * @copyright  (c) 2013 - 2014 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -74,14 +74,19 @@ abstract class ModWowTopWeeklyContributorsHelper
             return 'no contributors found';
         }
 
-        // get only roster data
+        // get only summary data
         preg_match('#<div class="summary-weekly-contributors">(.+?)</div>#is', $result->body, $result->body);
 
         $result->body = $result->body[1];
 
+        if (strpos($result->body, '<table>') === false) {
+            return 'no contributors found';
+        }
+
         $result->dom = new DOMDocument;
         $result->dom->loadHTML('<?xml encoding="UTF-8">' . $result->body);
         $result->table = $result->dom->getElementsByTagName('tbody')->item(0)->getElementsByTagName('tr');
+
         $result->rows = array();
 
         for ($c = 0; $c < $result->table->length; $c++) {
