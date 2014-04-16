@@ -20,9 +20,6 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
                 <col width="2%"/>
             <?php } ?>
             <col width="12%"/>
-            <?php if ($params->get('display_class')) { ?>
-                <col width="6%"/>
-            <?php } ?>
             <?php if ($params->get('display_level')) { ?>
                 <col width="5%"/>
             <?php } ?>
@@ -35,9 +32,6 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
                     <th class="place"><?php echo JText::_('MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_PLACE'); ?></th>
                 <?php } ?>
                 <th class="name"><?php echo JText::_('MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_NAME'); ?></th>
-                <?php if ($params->get('display_class')) { ?>
-                    <th class="class"><?php echo JText::_('MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_CLASS'); ?></th>
-                <?php } ?>
                 <?php if ($params->get('display_level')) { ?>
                     <th class="level"><?php echo JText::_('MOD_WOW_TOP_WEEKLY_CONTRIBUTORS_LEVEL'); ?></th>
                 <?php } ?>
@@ -51,10 +45,12 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
                 <?php if ($params->get('display_place')) { ?>
                     <td class="place"><?php echo ++$key; ?>.</td>
                 <?php } ?>
-                <td class="name"><span><?php echo JHtml::_('link', $contributor->link, $contributor->name, array('target' => '_blank', 'title' => $contributor->name)); ?></span></td>
-                <?php if ($params->get('display_class')) { ?>
-                    <td class="class"><?php echo JHtml::_('image', $contributor->class, $contributor->name); ?></td>
-                <?php } ?>
+                <td class="name">
+                    <?php if ($params->get('display_class')) { ?>
+                        <?php echo JHtml::_('image', $contributor->class, $contributor->name); ?>
+                    <?php } ?>
+                    <?php echo JHtml::_('link', $contributor->link, $contributor->name, array('target' => '_blank', 'class' => $contributor->color, 'title' => $contributor->name)); ?>
+                </td>
                 <?php if ($params->get('display_level')) { ?>
                     <td class="level"><?php echo $contributor->level; ?></td>
                 <?php } ?>

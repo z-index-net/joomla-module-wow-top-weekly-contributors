@@ -14,3 +14,62 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.mod_wow_top_weekly_contributors .points {
+    text-align: right;
+}
+
+/* warrior */
+.mod_wow_top_weekly_contributors .name .color-c1 {
+    color: #c69b6d !important;
+}
+
+/* paladin */
+.mod_wow_top_weekly_contributors .color-c2 {
+    color: #f48cba !important;
+}
+
+/* hunter */
+.mod_wow_top_weekly_contributors .name .color-c3 {
+    color: #aad372 !important;
+}
+
+/* rogue */
+.mod_wow_top_weekly_contributors .name .color-c4 {
+    color: #fff468 !important;
+}
+
+/* priest */
+.mod_wow_top_weekly_contributors .name .color-c5 {
+    color: #f0ebe0 !important;
+}
+
+/* death knight */
+.mod_wow_top_weekly_contributors .name .color-c6 {
+    color: #c41e3b !important;
+}
+
+/* shaman */
+.mod_wow_top_weekly_contributors .name .color-c7 {
+    color: #2359ff !important;
+}
+
+/* mage */
+.mod_wow_top_weekly_contributors .name .color-c8 {
+    color: #68ccef !important;
+}
+
+/* warlock */
+.mod_wow_top_weekly_contributors .name .color-c9 {
+    color: #9382c9 !important;
+}
+
+/* monk */
+.mod_wow_top_weekly_contributors .name .color-c10 {
+    color: #00ffba !important;
+}
+
+/* druid */
+.mod_wow_top_weekly_contributors .name .color-c11 {
+    color: #ff7c0a !important;
+}

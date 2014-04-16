@@ -96,6 +96,7 @@ abstract class ModWowTopWeeklyContributorsHelper
         foreach ($result->rows as $key => $row) {
             $contributors[$key] = new stdClass;
             $contributors[$key]->name = trim($row->item(1)->textContent);
+            $contributors[$key]->color = $row->item(1)->getElementsByTagName('a')->item(0)->getAttribute('class');
             $contributors[$key]->class = $row->item(2)->getElementsByTagName('img')->item(0)->getAttribute('src');
             $contributors[$key]->level = trim($row->item(3)->textContent);
             $contributors[$key]->points = trim($row->item(4)->textContent);
