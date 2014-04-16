@@ -15,6 +15,19 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
     <div class="mod_wow_top_weekly_contributors ajax"></div>
 <?php else: ?>
     <table class="mod_wow_top_weekly_contributors">
+        <colgroup>
+            <?php if ($params->get('display_place')) { ?>
+                <col width="2%"/>
+            <?php } ?>
+            <col width="12%"/>
+            <?php if ($params->get('display_class')) { ?>
+                <col width="6%"/>
+            <?php } ?>
+            <?php if ($params->get('display_level')) { ?>
+                <col width="5%"/>
+            <?php } ?>
+            <col width="6%"/>
+        </colgroup>
         <?php if ($params->get('display_thead')) { ?>
             <thead>
             <tr>
@@ -36,9 +49,9 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
         <?php foreach ($contributors as $key => $contributor) { ?>
             <tr>
                 <?php if ($params->get('display_place')) { ?>
-                    <td class="place"><?php echo ++$key; ?></td>
+                    <td class="place"><?php echo ++$key; ?>.</td>
                 <?php } ?>
-                <td class="name"><?php echo JHtml::_('link', $contributor->link, $contributor->name, array('target' => '_blank')); ?></td>
+                <td class="name"><span><?php echo JHtml::_('link', $contributor->link, $contributor->name, array('target' => '_blank', 'title' => $contributor->name)); ?></span></td>
                 <?php if ($params->get('display_class')) { ?>
                     <td class="class"><?php echo JHtml::_('image', $contributor->class, $contributor->name); ?></td>
                 <?php } ?>
