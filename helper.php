@@ -34,7 +34,6 @@ abstract class ModWowTopWeeklyContributorsHelper
 
     public static function getData(JRegistry &$params)
     {
-
         if ($params->get('ajax')) {
             return;
         }
@@ -49,7 +48,7 @@ abstract class ModWowTopWeeklyContributorsHelper
 
         $cache = JFactory::getCache('wow', 'output');
         $cache->setCaching(1);
-        $cache->setLifeTime($params->get('cache_time', 60));
+        $cache->setLifeTime($params->get('cache_time', 60) * 60);
 
         $key = md5($url);
 
@@ -93,6 +92,7 @@ abstract class ModWowTopWeeklyContributorsHelper
             $result->rows[] = $result->table->item($c)->getElementsByTagName('td');
         }
 
+        $contributors = array();
         foreach ($result->rows as $key => $row) {
             $contributors[$key] = new stdClass;
             $contributors[$key]->name = trim($row->item(1)->textContent);
