@@ -17,6 +17,7 @@
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-shadow: 0.1em 0.1em #999;
 }
 
 .mod_wow_top_weekly_contributors .points {
