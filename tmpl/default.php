@@ -3,13 +3,17 @@
 /**
  * @author     Branko Wilhelm <branko.wilhelm@gmail.com>
  * @link       http://www.z-index.net
- * @copyright  (c) 2013 - 2014 Branko Wilhelm
+ * @copyright  (c) 2013 - 2015 Branko Wilhelm
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @var        array $contributors
+ * @var        stdClass $module
+ * @var        Joomla\Registry\Registry $params
  */
 
 defined('_JEXEC') or die;
 
-JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module->module . '/tmpl/default.css');
+JFactory::getDocument()->addStyleSheet('media/' . $module->module . '/css/default.css');
 ?>
 <?php if ($params->get('ajax')) : ?>
     <div class="mod_wow_top_weekly_contributors ajax"></div>
@@ -17,13 +21,13 @@ JFactory::getDocument()->addStyleSheet(JUri::base(true) . '/modules/' . $module-
     <table class="mod_wow_top_weekly_contributors">
         <colgroup>
             <?php if ($params->get('display_place')) { ?>
-                <col width="2%"/>
+                <col width="2%" />
             <?php } ?>
-            <col width="12%"/>
+            <col width="12%" />
             <?php if ($params->get('display_level')) { ?>
-                <col width="5%"/>
+                <col width="5%" />
             <?php } ?>
-            <col width="6%"/>
+            <col width="6%" />
         </colgroup>
         <?php if ($params->get('display_thead')) { ?>
             <thead>
