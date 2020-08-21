@@ -12,7 +12,7 @@
 
 defined('_JEXEC') or die;
 
-JLoader::register('ModWowTopWeeklyContributorsHelper', dirname(__FILE__) . '/helper.php');
+JLoader::register('ModWowTopWeeklyContributorsHelper', __DIR__ . '/helper.php');
 
 $contributors = ModWowTopWeeklyContributorsHelper::getData($params);
 
