@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<updates>
+    <update>
+        <name>WoW top Weekly Contributors</name>
+        <element>mod_wow_top_weekly_contributors</element>
+        <type>module</type>
+        <client>0</client>
+        <version>1.0.0</version>
+        <infourl>https://github.com/z-index-net/joomla-module-wow-top-weekly-contributors</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/z-index-net/joomla-module-wow-top-weekly-contributors/releases/download/1.0.0/joomla-module-wow-top-weekly-contributors.zip</downloadurl>
+        </downloads>
+        <targetplatform name="joomla" version="^3\."/>
+    </update>
+</updates>
+
